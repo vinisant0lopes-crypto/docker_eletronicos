@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p class="eletronicos_lista">
+
+    </p>
+
+    <p class="eletronicos_maisCaros">
+
+    </p>
+
+    <p class="eletronicos_desconto">
+
+    </p>
+
+    <p class="eletronicos_precoTotal">
+
+    </p>
+
+    <script>
+
+        const eletronicos = [
+            {nome: "Computador", marca: "Pichau", tipo: "Gamer", preco: 3_000},
+            {nome: "Notebook", marca: "Dell", tipo: "Economico", preco: 1_300},
+            {nome: "Mouse", marca: "Razer", tipo: "Padrão", preco: 400},
+            {marca: "Monitor", marca: "LG", tipo: "Ultra Wide", preco: 1_000},
+            {nome: "Controle", marca: "Xbox", tipo: "Pro", preco: 300}
+        ]
+    
+        //Processar o tamanho da lista
+        const tamanhoLista = eletronicos.reduce((cont) => cont + 1,0)
+        console.log(tamanhoLista)
+    
+        //Exibir o preço dos eletronicos de altos valores
+        const eletronicosMaisCaros = eletronicos.filter((c) => c.preco <= 150_000)
+        console.log(eletronicosMaisCaros)
+    
+        //Aplicar 5% de desconto no preço
+        const desconto = eletronicos.map((d) => d.preco * 0.95 )
+        console.log(desconto)
+    
+        //Preço total dos eletronicos na lista
+        const totalPreco = eletronicos.reduce((soma, t) => soma + t.preco, 0)
+        console.log(totalPreco)
+    
+        document.querySelector(".eletronicos_lista").textContent = "Total de itens: " + tamanhoLista;
+        document.querySeletor(".eletronicos_maisCaros").textContent = "Mais caros: " + JSON.stringify(eletronicosMaisCaros);
+        document.querySelector(".eletronicos_desconto").textContent = "Preços com desconto: " + desconto.join(", ");
+        document.querySelector(".eletronicos_precoTotal").textContent = "Preco total: " + totalPreco;
+    
+    </script>
+
+</body>
+</html>

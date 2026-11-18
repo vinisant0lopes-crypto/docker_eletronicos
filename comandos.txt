@@ -1,0 +1,5 @@
+
+docker build -t projeto-eletronico-js .
+
+docker run -d -p 8080:80 --name servidor-web projeto-eletronico-js
+
